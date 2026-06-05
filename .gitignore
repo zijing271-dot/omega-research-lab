@@ -1,0 +1,15 @@
+﻿# OMEGA Incubator — cloned repos excluded (forked separately)
+MakeMoneyWithAI/
+MoneyPrinterTurbo/
+ai-hedge-fund/
+browser-use/
+dify/
+firecrawl/
+coolify/
+n8n/
+VoxCPM/
+Scrapling/
+composio/
+.telegraph-token.json
+__pycache__/
+*.pyc
