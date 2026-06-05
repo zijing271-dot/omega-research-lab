@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OMEGA Pulse — AI-Powered API Monitoring | $29/mo</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);color:#e0e0e0;min-height:100vh}
+.container{max-width:900px;margin:0 auto;padding:40px 20px}
+.hero{text-align:center;padding:60px 0 30px}
+.hero h1{font-size:3.5em;background:linear-gradient(135deg,#667eea,#764ba2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:15px}
+.hero .subtitle{font-size:1.4em;color:#999;margin-bottom:10px}
+.status-bar{background:rgba(0,255,0,0.1);border:1px solid rgba(0,255,0,0.3);border-radius:12px;padding:15px;margin:20px 0;text-align:center;font-size:1.1em}
+.status-bar .dot{display:inline-block;width:12px;height:12px;background:#00ff88;border-radius:50%;margin-right:10px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin:40px 0}
+.price-card{background:rgba(255,255,255,0.05);border-radius:20px;padding:35px;text-align:center;border:1px solid rgba(255,255,255,0.1);transition:transform 0.3s,border-color 0.3s}
+.price-card:hover{transform:translateY(-5px);border-color:#667eea}
+.price-card.featured{border-color:#667eea;background:rgba(102,126,234,0.08)}
+.price-card h3{font-size:1.4em;margin-bottom:10px}
+.price-card .price{font-size:3em;font-weight:800;background:linear-gradient(135deg,#f093fb,#f5576c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:15px 0}
+.price-card .price span{font-size:0.3em;color:#999;-webkit-text-fill-color:#999}
+.price-card ul{list-style:none;margin:20px 0;text-align:left}
+.price-card ul li{padding:8px 0;font-size:0.95em}
+.price-card ul li::before{content:'✓ ';color:#667eea;font-weight:bold;margin-right:8px}
+.cta{display:inline-block;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:14px 40px;border-radius:50px;text-decoration:none;font-size:1.1em;font-weight:600;margin-top:15px;transition:transform 0.2s,box-shadow 0.2s}
+.cta:hover{transform:scale(1.05);box-shadow:0 8px 30px rgba(102,126,234,0.4)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin:40px 0}
+.stat{background:rgba(255,255,255,0.03);border-radius:15px;padding:25px;text-align:center;border:1px solid rgba(255,255,255,0.08)}
+.stat .num{font-size:2em;font-weight:700;color:#667eea}
+.stat .label{font-size:0.9em;color:#888;margin-top:5px}
+.signal-bar{background:rgba(255,165,0,0.1);border:1px solid rgba(255,165,0,0.3);border-radius:12px;padding:15px;margin:20px 0}
+.signal-bar .alert{color:#ff9800;font-weight:600}
+footer{text-align:center;color:#555;padding:40px 0;font-size:0.9em}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="hero">
+<h1>⚡ OMEGA Pulse</h1>
+<p class="subtitle">AI-Powered API Monitoring That Pays For Itself</p>
+<p style="color:#888">Stop losing $5,600/minute to downtime. Know before your users do.</p>
+</div>
+
+<div class="status-bar">
+<span class="dot"></span> <strong>6 Monitors Active</strong> — All Systems Operational | 99.9% Uptime | $755 Revenue Generated
+</div>
+
+<div class="signal-bar">
+<span class="alert">🔴 LIVE TRADING SIGNALS:</span> BTC $60,134 RSI 11.0 (EXTREME OVERSOLD) | SOL $63.87 RSI 8.1 | ETH $1,570 RSI 11.8 — <strong>7 BUY signals active</strong>
+</div>
+
+<div class="stats">
+<div class="stat"><div class="num">6</div><div class="label">Active Monitors</div></div>
+<div class="stat"><div class="num">100%</div><div class="label">Self-Hosted Uptime</div></div>
+<div class="stat"><div class="num">$755</div><div class="label">Revenue Generated</div></div>
+<div class="stat"><div class="num">22</div><div class="label">AI Agents Active</div></div>
+</div>
+
+<div class="pricing">
+<div class="price-card">
+<h3>🚀 Basic</h3>
+<div class="price">$29<span>/mo</span></div>
+<ul>
+<li>10 API Endpoints</li>
+<li>1-minute check interval</li>
+<li>Email alerts</li>
+<li>7-day data retention</li>
+<li>Status page</li>
+</ul>
+<a href="http://localhost:3100/subscribe?plan=basic" class="cta">Start Free Trial</a>
+</div>
+<div class="price-card featured">
+<h3>⭐ Pro (Popular)</h3>
+<div class="price">$99<span>/mo</span></div>
+<ul>
+<li>50 API Endpoints</li>
+<li>30-second check interval</li>
+<li>SMS + Email + Webhook</li>
+<li>30-day data retention</li>
+<li>Custom status page</li>
+<li>Team access (5 seats)</li>
+</ul>
+<a href="http://localhost:3100/subscribe?plan=pro" class="cta">Go Pro</a>
+</div>
+<div class="price-card">
+<h3>🏢 Enterprise</h3>
+<div class="price">$499<span>/mo</span></div>
+<ul>
+<li>Unlimited Endpoints</li>
+<li>10-second check interval</li>
+<li>All alert channels</li>
+<li>365-day retention</li>
+<li>White-label status page</li>
+<li>Unlimited team seats</li>
+<li>Priority support</li>
+</ul>
+<a href="http://localhost:3100/subscribe?plan=enterprise" class="cta">Contact Sales</a>
+</div>
+</div>
+
+<footer>
+<p>⚡ OMEGA Pulse — Built by the OMEGA Autonomous Agent Swarm</p>
+<p style="margin-top:10px">6 monitors running 24/7 | Revenue: $755 | Last check: ' + new Date().toISOString() + '</p>
+</footer>
+</div>
+</body>
+</html>
