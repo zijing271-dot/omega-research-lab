@@ -180,58 +180,59 @@ async function main() {
 
     // Real-time crypto market data (June 5, 2026)
     const article = generateCryptoArticle({
-        title: 'Crypto Market Analysis: BTC at Critical Support, ETH Below $2,000 — June 2026 Outlook',
-        subtitle: 'Institutional outflows, geopolitical tensions, and technical breakdowns create a high-stakes environment for crypto traders',
+        title: 'Crypto Market Flash: BTC $62,878 Deep Oversold, ETH $1,676 — June 5 Crash Buying Opportunity?',
+        subtitle: 'RSI readings hit single digits across crypto majors. ETF outflows accelerate but on-chain accumulation suggests smart money is buying the dip.',
         snapshot: [
-            'Bitcoin (BTC): ~$67,300 — consolidating below all major EMAs after 15%+ correction from recent highs',
-            'Ethereum (ETH): ~$1,965 — fighting to reclaim $2,000 psychological support level',
-            'Total Crypto Market Cap: ~$2.3 trillion — down from $2.8T April peak',
-            'BTC Dominance: 56.2% — capital rotating to BTC safety during risk-off',
-            'Fear & Greed Index: 28 (Fear) — extreme caution among retail traders'
+            'Bitcoin (BTC): $62,878 — RSI 12.8 (deep oversold), trading at lower Bollinger Band, 30-day decline accelerating',
+            'Ethereum (ETH): $1,675.94 — RSI 14.1 (oversold), below all major EMAs, ETH/BTC ratio at multi-year lows',
+            'Solana (SOL): $66.07 — RSI 8.9 (extreme oversold), -27% in 30 days, capitulation-level readings',
+            'XRP: $1.14 — RSI 18.1 (oversold), MACD bearish but histogram showing early divergence',
+            'SPY: $757.09 (+4.6% 30d) — equities divergence from crypto, risk-on appetite exists but not flowing to digital assets'
         ],
         drivers: [
-            'US-Iran Geopolitical Tensions: Strait of Hormuz blockade keeps oil above $90/barrel, fueling inflation fears and risk-off sentiment',
-            'Massive ETF Outflows: Spot BTC ETFs recorded $1.42B in outflows last week — third consecutive week exceeding $1B. BlackRock IBIT alone lost ~$1B (May 18-22)',
-            'Strategy (MicroStrategy) BTC Sale: The company sold 32 BTC (~$2.5M), its first sale since 2022, triggering ETH/BTC ratio speculation',
-            'Macro Headwinds: World Cup distractions, IPO market pressure, lingering inflation, and AI stock mania drawing institutional capital away from crypto',
-            'Leverage Flush: Over $800M in long liquidations across exchanges in the past two weeks, resetting open interest to healthier levels'
+            'Massive Crypto Crash: BTC dropped from $82,000+ in April to $62,878 today — a 23%+ correction in 6 weeks. Altcoins hit harder with SOL down 27%, XRP down 24% in 30 days.',
+            'ETF Exodus: Spot BTC ETFs experiencing record outflows as institutional players de-risk. The unwind of the ETF-driven rally has been brutal and swift.',
+            'Macro Divergence: SPY up 4.6% and AAPL up 9.6% in 30 days while crypto tanks — suggesting crypto-specific selling pressure, not broad risk-off.',
+            'Leverage Cascade: RSI readings in single digits (SOL 8.9, BTC 12.8, ETH 14.1) indicate forced selling and liquidations. These levels historically mark capitulation bottoms.',
+            'Gold Rallying: GLD at $411.27 with Golden Cross forming — traditional safe havens working while crypto acts as a risk asset. Structural narrative shift underway.'
         ],
         btcAnalysis: [
-            'BTC is trading at $67,300, down significantly from April highs above $82,000. The price sits below the 50-day, 100-day, and 200-day EMAs — a structurally bearish configuration.',
-            'Key Support: $65,000–$62,500 zone. This area has historically attracted strong spot buying and represents the last line of defense before a potential drop to $56,000.',
-            'Key Resistance: $75,000–$77,000 must be reclaimed to invalidate the bearish structure and signal a short-term bottom.',
-            'RSI (daily): 37 — approaching oversold territory but not there yet. MACD is negative but the histogram is showing early signs of slowing momentum.',
-            'On-chain: Long-term holder supply is increasing, exchange balances are declining — classic accumulation signals despite price weakness.'
+            'BTC at $62,878 with daily RSI of 12.8 — this is the most oversold reading since the FTX crash of November 2022. The price is sitting right at the lower Bollinger Band ($62.5K area).',
+            'Key Support: $60,000 psychological round number. Below that, $56,000 (Peter Brandt triangle target). The lower BB provides natural technical support for a bounce.',
+            'Key Resistance: EMA-50 at $84,000+ is far overhead. First real resistance is $68,000–$70,000 (previous support-turned-resistance).',
+            'MACD histogram is deeply negative but the rate of decline is showing early signs of deceleration — watch for bullish divergence on lower timeframes.',
+            'Volume ratio at 1.36x average — elevated but not panic-level. True capitulation would show 3-5x volume. This suggests we may not have seen the final flush.'
         ],
         ethAnalysis: [
-            'ETH is clinging to the $1,965 level, having broken below the critical $2,000 psychological support. The ETH/BTC ratio continues to decline, now at ~0.029.',
-            'Key Support: $1,840–$1,750 zone. A breakdown below $1,750 could accelerate selling toward $1,550.',
-            'Key Resistance: $2,060–$2,170 must be reclaimed for any meaningful recovery. Above that, $2,371 becomes the next target.',
-            'Standard Chartered Analysis: Geoffrey Kendrick compares ETH\'s current setup to Amazon after the dot-com crash — fundamentals improving while price lags. Year-end target: $4,000.',
-            'ETH fundamentals are actually improving: Layer-2 TVL growing, stablecoin dominance, RWA tokenization adoption, and staking yield (3-5% APR) attracting institutional treasury allocation.'
+            'ETH at $1,675.94 with RSI 14.1 — even more oversold than BTC on a relative basis. ETH has been the worst performer among major Layer-1s in this drawdown.',
+            'Key Support: $1,550–$1,500 zone. This is the last major support before the 2023 bear market lows. A breakdown below $1,500 would be structurally devastating.',
+            'Key Resistance: $1,840 (previous support). ETH needs to reclaim $2,000 to even begin discussing a trend reversal. Currently far from that level.',
+            'The ETH/BTC ratio continues to make new lows, now around 0.0266. This suggests capital is rotating to BTC as the safer crypto asset during the downturn.',
+            'Counter-narrative: ETH staking yields (3-5% APR) combined with L2 growth (Base, Arbitrum, Optimism all at ATH in TVL) suggest fundamentals are disconnected from price.'
         ],
         institutional: [
-            'Standard Chartered: Year-end 2026 targets of BTC $100,000 and ETH $4,000. Current levels described as a "buying zone."',
-            'Peter Brandt: Bearish expanding triangle pattern on BTC targets ~$56,000. Invalidation above $75,000.',
-            'Tom Lee (Fundstrat): Ultra-bullish on ETH long-term, suggests $250,000 possible if BTC reaches $2-3M.',
-            'Bitcoin Rainbow Chart (June 1): BTC band range $59,186–$491,731. Current price sits in the "BUY!" zone.',
-            'Polymarket Odds: BTC above $75,000 by July 1: 34%. ETH above $2,500 by Q3: 28%.'
+            'Standard Chartered: Maintains year-end 2026 targets of BTC $100,000 and ETH $4,000. Current levels described as a generational buying opportunity.',
+            'Peter Brandt: Bearish expanding triangle target ~$56,000 still active. Invalidation above $75,000. Pattern completion would mark a generational bottom.',
+            'Bitcoin Rainbow Chart (June 5): Band range $59,186–$491,731. At $62,878, BTC is literally in the "BUY!" / "Basically a Fire Sale" zone.',
+            'On-chain data: Long-term holder supply at ATH. Exchange balances at 4-year lows. Smart money accumulation pattern despite price weakness.',
+            'Liquidation data: Over $1.2B in total liquidations across CeFi and DeFi in past 2 weeks. Open interest reset to levels last seen in February 2026.'
         ],
         bullBearTable: [
-            'BULL CASE vs BEAR CASE',
-            '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
-            '🟢 BTC oversold at strong support vs 🔴 $1.42B+ weekly ETF outflows',
-            '🟢 Standard Chartered calls this "buying zone" vs 🔴 US-Iran tensions unresolved',
-            '🟢 ETH fundamentals growing (L2, RWA, staking) vs 🔴 BTC lost inflation-hedge narrative',
-            '🟢 Strategy expected to buy back BTC vs 🔴 Oil >$90 → inflation fears persist',
-            '🟢 Long-term holders accumulating vs 🔴 Death crosses confirmed on daily timeframe'
+            'BULL CASE vs BEAR CASE — June 5, 2026',
+            '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+            '🟢 RSI 12.8 = most oversold since FTX crash vs 🔴 Weekly ETF outflows exceeding $1B',
+            '🟢 Rainbow Chart says "BUY!" zone vs 🔴 Death cross on daily timeframe confirmed',
+            '🟢 Long-term holders accumulating at ATH vs 🔴 Macro uncertainty + oil above $90',
+            '🟢 Exchange balances at 4-year lows vs 🔴 Altcoins showing capitulation (SOL RSI 8.9)',
+            '🟢 SPY/AAPL rallying = risk appetite exists vs 🔴 Crypto decoupling from risk-on assets',
+            '🟢 Standard Chartered $100K BTC target vs 🔴 Peter Brandt $56K target still active'
         ],
         strategies: [
-            'DCA Strategy: Current fear levels (Fear & Greed at 28) have historically been profitable entry points for dollar-cost averaging into BTC and ETH.',
-            'Support Bounce Trade: BTC at $65,000 with tight stop at $62,000 offers a favorable risk/reward if the support zone holds. Target: $73,000–75,000.',
-            'ETH Contrarian Play: If Standard Chartered is right about the Amazon analogy, ETH at sub-$2,000 could be a generational entry. Position size small due to bearish trend.',
-            'Risk Management: Position sizing critical. Max 1-2% portfolio risk per trade. Use wider stops in current volatile environment.',
-            'Cash is a Position: In a confirmed downtrend with geopolitical uncertainty, holding stablecoins (USDC/USDT) earning 5-8% APY in DeFi is a valid strategy while waiting for trend reversal confirmation.'
+            'Aggressive DCA: RSI 12.8 on BTC has historically marked excellent long-term entry points. Split capital into 5-6 weekly buys to average into a potential bottoming process.',
+            'Support Bounce Scalp: BTC long at $62,000–62,500 with stop at $59,900. Target $68,000 (+10%). Risk/reward approximately 1:3. Size small — trend is still down.',
+            'SOL Extreme Oversold Play: RSI 8.9 is statistically rare — occurs less than 0.5% of trading days. Mean reversion trade: long SOL with 15% position, stop at $60, target $78.',
+            'ETH/BTC Ratio Reversal: If ETH fundamentals are truly disconnected from price, the ETH/BTC ratio at 0.0266 could be a generational entry. Small position, no leverage.',
+            'Cash is King Strategy: Stablecoins in DeFi earning 5-8% APY. Wait for daily RSI to recover above 30 and price to reclaim 20-day EMA before deploying significant capital.'
         ]
     });
 

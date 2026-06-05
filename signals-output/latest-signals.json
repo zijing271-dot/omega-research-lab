@@ -1,439 +1,379 @@
 {
-  "generated_at": "2026-06-05T11:12:20.921313",
-  "symbols_analyzed": 14,
+  "generated_at": "2026-06-05T18:29:10.685414+00:00",
+  "symbols_analyzed": 12,
   "results": [
     {
       "symbol": "SOL-USD",
-      "current_price": 67.13,
-      "price_change_30d_pct": -27.15,
-      "action": "\ud83d\udfe1 BUY",
-      "score": 30,
+      "current_price": 64.11,
+      "price_change_30d_pct": -27.48,
+      "action": "BUY",
+      "score": 35,
       "signals": [
-        "RSI OVERSOLD (8.2)",
+        "RSI EXTREME OVERSOLD (8.1)",
         "MACD bearish momentum increasing",
         "Price AT LOWER BB \u2014 potential bounce",
-        "Price below BB midline \u2014 bearish bias"
+        "Price below BB midline \u2014 bearish bias",
+        "High volume (1.6x avg)"
       ],
       "indicators": {
-        "rsi": 8.2,
-        "macd": -3.7152,
-        "macd_signal": -2.0397,
-        "macd_histogram": -1.6754,
-        "bb_upper": 92.65,
-        "bb_lower": 71.69,
-        "bb_mid": 82.17,
-        "ema_50": 84.32,
-        "ema_200": 98.81,
-        "volume_ratio": 1.36
+        "rsi": 8.1,
+        "macd": -4.4792,
+        "macd_signal": -2.5073,
+        "macd_histogram": -1.9719,
+        "bb_upper": 93.79,
+        "bb_lower": 68.46,
+        "bb_mid": 81.12,
+        "ema_50": 83.37,
+        "ema_200": 86.42,
+        "volume_ratio": 1.62
       },
       "levels": {
-        "support": 67.15,
-        "resistance": 98.27,
-        "dist_to_support_pct": -0.04,
-        "dist_to_resistance_pct": 46.38
+        "support": 63.74,
+        "resistance": 87.79,
+        "dist_to_support_pct": 0.58,
+        "dist_to_resistance_pct": 36.93
       }
     },
     {
       "symbol": "XRP-USD",
-      "current_price": 1.13,
-      "price_change_30d_pct": -23.55,
-      "action": "\ud83d\udfe1 BUY",
-      "score": 30,
+      "current_price": 1.1,
+      "price_change_30d_pct": -20.98,
+      "action": "BUY",
+      "score": 35,
       "signals": [
-        "RSI OVERSOLD (16.0)",
+        "RSI EXTREME OVERSOLD (16.0)",
         "MACD bearish momentum increasing",
         "Price AT LOWER BB \u2014 potential bounce",
-        "Price below BB midline \u2014 bearish bias"
+        "Price below BB midline \u2014 bearish bias",
+        "High volume (1.7x avg)"
       ],
       "indicators": {
         "rsi": 16.0,
-        "macd": -0.05,
-        "macd_signal": -0.0307,
-        "macd_histogram": -0.0193,
-        "bb_upper": 1.46,
-        "bb_lower": 1.18,
-        "bb_mid": 1.32,
-        "ema_50": 1.36,
-        "ema_200": 1.56,
-        "volume_ratio": 1.44
+        "macd": -0.0584,
+        "macd_signal": -0.0358,
+        "macd_histogram": -0.0226,
+        "bb_upper": 1.47,
+        "bb_lower": 1.15,
+        "bb_mid": 1.31,
+        "ema_50": 1.35,
+        "ema_200": 1.38,
+        "volume_ratio": 1.72
       },
       "levels": {
-        "support": 1.13,
-        "resistance": 1.55,
-        "dist_to_support_pct": 0.02,
-        "dist_to_resistance_pct": 36.38
-      }
-    },
-    {
-      "symbol": "BTC-USD",
-      "current_price": 62298.0,
-      "price_change_30d_pct": -23.14,
-      "action": "\ud83d\udfe1 BUY",
-      "score": 25,
-      "signals": [
-        "RSI OVERSOLD (11.1)",
-        "MACD bearish momentum increasing",
-        "Price AT LOWER BB \u2014 potential bounce",
-        "Price below BB midline \u2014 bearish bias",
-        "High volume (1.6x avg) \u2014 conviction move"
-      ],
-      "indicators": {
-        "rsi": 11.1,
-        "macd": -3073.8867,
-        "macd_signal": -1630.8535,
-        "macd_histogram": -1443.0331,
-        "bb_upper": 83147.98,
-        "bb_lower": 64795.55,
-        "bb_mid": 73971.77,
-        "ema_50": 74655.03,
-        "ema_200": 78006.83,
-        "volume_ratio": 1.61
-      },
-      "levels": {
-        "support": 62335.4,
-        "resistance": 82792.21,
-        "dist_to_support_pct": -0.06,
-        "dist_to_resistance_pct": 32.9
-      }
-    },
-    {
-      "symbol": "ETH-USD",
-      "current_price": 1721.36,
-      "price_change_30d_pct": -24.53,
-      "action": "\ud83d\udfe1 BUY",
-      "score": 25,
-      "signals": [
-        "RSI OVERSOLD (13.6)",
-        "MACD bearish momentum increasing",
-        "Price AT LOWER BB \u2014 potential bounce",
-        "Price below BB midline \u2014 bearish bias",
-        "High volume (1.5x avg) \u2014 conviction move"
-      ],
-      "indicators": {
-        "rsi": 13.6,
-        "macd": -104.1437,
-        "macd_signal": -75.4482,
-        "macd_histogram": -28.6955,
-        "bb_upper": 2271.73,
-        "bb_lower": 1800.73,
-        "bb_mid": 2036.23,
-        "ema_50": 2128.96,
-        "ema_200": 2400.53,
-        "volume_ratio": 1.53
-      },
-      "levels": {
-        "support": 1724.12,
-        "resistance": 2464.78,
-        "dist_to_support_pct": -0.16,
-        "dist_to_resistance_pct": 43.19
-      }
-    },
-    {
-      "symbol": "GLD",
-      "current_price": 411.27,
-      "price_change_30d_pct": -1.67,
-      "action": "\ud83d\udfe1 BUY",
-      "score": 25,
-      "signals": [
-        "RSI near oversold (35.7)",
-        "MACD bullish momentum increasing",
-        "GOLDEN CROSS zone \u2014 bullish structure",
-        "Price below BB midline \u2014 bearish bias"
-      ],
-      "indicators": {
-        "rsi": 35.7,
-        "macd": -5.0961,
-        "macd_signal": -4.8256,
-        "macd_histogram": -0.2705,
-        "bb_upper": 437.29,
-        "bb_lower": 400.8,
-        "bb_mid": 419.04,
-        "ema_50": 424.96,
-        "ema_200": 419.09,
-        "volume_ratio": 0.77
-      },
-      "levels": {
-        "support": 399.2,
-        "resistance": 477.45,
-        "dist_to_support_pct": 2.93,
-        "dist_to_resistance_pct": 16.09
-      }
-    },
-    {
-      "symbol": "SLV",
-      "current_price": 66.98,
-      "price_change_30d_pct": 1.62,
-      "action": "\ud83d\udfe1 BUY",
-      "score": 25,
-      "signals": [
-        "RSI near oversold (30.7)",
-        "MACD bullish momentum increasing",
-        "GOLDEN CROSS zone \u2014 bullish structure",
-        "Price below BB midline \u2014 bearish bias"
-      ],
-      "indicators": {
-        "rsi": 30.7,
-        "macd": -0.8407,
-        "macd_signal": -0.4047,
-        "macd_histogram": -0.4359,
-        "bb_upper": 78.77,
-        "bb_lower": 62.35,
-        "bb_mid": 70.56,
-        "ema_50": 69.7,
-        "ema_200": 65.85,
-        "volume_ratio": 0.53
-      },
-      "levels": {
-        "support": 60.37,
-        "resistance": 80.86,
-        "dist_to_support_pct": 9.87,
-        "dist_to_resistance_pct": 20.72
-      }
-    },
-    {
-      "symbol": "BNB-USD",
-      "current_price": 591.7,
-      "price_change_30d_pct": -12.72,
-      "action": "\ud83d\udfe1 BUY",
-      "score": 15,
-      "signals": [
-        "RSI near oversold (37.0)",
-        "MACD bearish momentum increasing",
-        "Price AT LOWER BB \u2014 potential bounce",
-        "Price below BB midline \u2014 bearish bias"
-      ],
-      "indicators": {
-        "rsi": 37.0,
-        "macd": -1.2578,
-        "macd_signal": 5.3632,
-        "macd_histogram": -6.621,
-        "bb_upper": 709.35,
-        "bb_lower": 598.82,
-        "bb_mid": 654.08,
-        "ema_50": 647.8,
-        "ema_200": 709.15,
-        "volume_ratio": 1.13
-      },
-      "levels": {
-        "support": 589.61,
-        "resistance": 743.36,
-        "dist_to_support_pct": 0.35,
-        "dist_to_resistance_pct": 25.63
-      }
-    },
-    {
-      "symbol": "NVDA",
-      "current_price": 218.66,
-      "price_change_30d_pct": 11.28,
-      "action": "\u26aa HOLD/NEUTRAL",
-      "score": 10,
-      "signals": [
-        "RSI near oversold (35.9)",
-        "MACD bullish momentum increasing",
-        "Price below BB midline \u2014 bearish bias"
-      ],
-      "indicators": {
-        "rsi": 35.9,
-        "macd": 3.5703,
-        "macd_signal": 4.7492,
-        "macd_histogram": -1.1789,
-        "bb_upper": 231.46,
-        "bb_lower": 207.38,
-        "bb_mid": 219.42,
-        "ema_50": 206.92,
-        "ema_200": 191.82,
-        "volume_ratio": 0.96
-      },
-      "levels": {
-        "support": 164.27,
-        "resistance": 236.54,
-        "dist_to_support_pct": 24.87,
-        "dist_to_resistance_pct": 8.18
+        "support": 1.09,
+        "resistance": 1.43,
+        "dist_to_support_pct": 0.46,
+        "dist_to_resistance_pct": 30.14
       }
     },
     {
       "symbol": "GOOGL",
-      "current_price": 372.19,
-      "price_change_30d_pct": -4.18,
-      "action": "\u26aa HOLD/NEUTRAL",
-      "score": 10,
+      "current_price": 367.29,
+      "price_change_30d_pct": 6.65,
+      "action": "BUY",
+      "score": 25,
       "signals": [
-        "RSI near oversold (30.1)",
-        "MACD bullish momentum increasing",
-        "Price below BB midline \u2014 bearish bias"
+        "RSI OVERSOLD (29.8)",
+        "MACD bearish momentum increasing",
+        "Price below BB midline \u2014 bearish bias",
+        "GOLDEN CROSS zone \u2014 bullish structure"
       ],
       "indicators": {
-        "rsi": 30.1,
-        "macd": 2.6036,
-        "macd_signal": 8.1429,
-        "macd_histogram": -5.5393,
-        "bb_upper": 411.05,
-        "bb_lower": 362.65,
-        "bb_mid": 386.85,
-        "ema_50": 361.19,
-        "ema_200": 333.35,
-        "volume_ratio": 1.4
+        "rsi": 29.8,
+        "macd": 1.6927,
+        "macd_signal": 6.9651,
+        "macd_histogram": -5.2724,
+        "bb_upper": 410.41,
+        "bb_lower": 360.21,
+        "bb_mid": 385.31,
+        "ema_50": 360.21,
+        "ema_200": 323.77,
+        "volume_ratio": 0.66
       },
       "levels": {
-        "support": 272.11,
+        "support": 358.08,
         "resistance": 408.61,
-        "dist_to_support_pct": 26.89,
-        "dist_to_resistance_pct": 9.79
+        "dist_to_support_pct": 2.57,
+        "dist_to_resistance_pct": 11.25
       }
     },
     {
-      "symbol": "MSFT",
-      "current_price": 428.05,
-      "price_change_30d_pct": 4.28,
-      "action": "\u26aa HOLD/NEUTRAL",
-      "score": 0,
+      "symbol": "BNB-USD",
+      "current_price": 569.1,
+      "price_change_30d_pct": -10.66,
+      "action": "BUY",
+      "score": 20,
       "signals": [
         "MACD bearish momentum increasing",
-        "Price above BB midline \u2014 bullish bias"
+        "Price AT LOWER BB \u2014 potential bounce",
+        "Price below BB midline \u2014 bearish bias",
+        "GOLDEN CROSS zone \u2014 bullish structure"
       ],
       "indicators": {
-        "rsi": 58.6,
-        "macd": 7.36,
-        "macd_signal": 6.5536,
-        "macd_histogram": 0.8064,
-        "bb_upper": 450.66,
-        "bb_lower": 394.01,
-        "bb_mid": 422.34,
-        "ema_50": 416.37,
-        "ema_200": 436.35,
-        "volume_ratio": 0.71
+        "rsi": 34.9,
+        "macd": -6.9026,
+        "macd_signal": 3.0626,
+        "macd_histogram": -9.9652,
+        "bb_upper": 715.38,
+        "bb_lower": 585.26,
+        "bb_mid": 650.32,
+        "ema_50": 643.86,
+        "ema_200": 641.52,
+        "volume_ratio": 1.3
       },
       "levels": {
-        "support": 355.51,
-        "resistance": 466.32,
-        "dist_to_support_pct": 16.95,
-        "dist_to_resistance_pct": 8.94
+        "support": 570.97,
+        "resistance": 743.36,
+        "dist_to_support_pct": -0.33,
+        "dist_to_resistance_pct": 30.62
       }
     },
     {
       "symbol": "TSLA",
-      "current_price": 418.45,
-      "price_change_30d_pct": 7.47,
-      "action": "\u26aa HOLD/NEUTRAL",
-      "score": 0,
+      "current_price": 391.64,
+      "price_change_30d_pct": 4.08,
+      "action": "BUY",
+      "score": 20,
       "signals": [
-        "RSI near oversold (39.3)",
         "MACD bearish momentum increasing",
-        "Price below BB midline \u2014 bearish bias"
+        "Price AT LOWER BB \u2014 potential bounce",
+        "Price below BB midline \u2014 bearish bias",
+        "GOLDEN CROSS zone \u2014 bullish structure"
       ],
       "indicators": {
-        "rsi": 39.3,
-        "macd": 7.3274,
-        "macd_signal": 9.7206,
-        "macd_histogram": -2.3932,
-        "bb_upper": 451.87,
-        "bb_lower": 401.95,
-        "bb_mid": 426.91,
-        "ema_50": 408.99,
-        "ema_200": 422.58,
-        "volume_ratio": 0.69
+        "rsi": 37.5,
+        "macd": 4.2552,
+        "macd_signal": 8.7074,
+        "macd_histogram": -4.4522,
+        "bb_upper": 454.76,
+        "bb_lower": 397.05,
+        "bb_mid": 425.9,
+        "ema_50": 406.82,
+        "ema_200": 401.73,
+        "volume_ratio": 0.86
       },
       "levels": {
-        "support": 337.24,
+        "support": 391.41,
         "resistance": 453.4,
-        "dist_to_support_pct": 19.41,
-        "dist_to_resistance_pct": 8.35
-      }
-    },
-    {
-      "symbol": "SPY",
-      "current_price": 757.09,
-      "price_change_30d_pct": 4.6,
-      "action": "\u26aa HOLD/NEUTRAL",
-      "score": 0,
-      "signals": [
-        "MACD bearish momentum increasing",
-        "Price above BB midline \u2014 bullish bias"
-      ],
-      "indicators": {
-        "rsi": 59.2,
-        "macd": 11.9758,
-        "macd_signal": 12.6282,
-        "macd_histogram": -0.6525,
-        "bb_upper": 763.43,
-        "bb_lower": 728.56,
-        "bb_mid": 745.99,
-        "ema_50": 722.51,
-        "ema_200": 695.06,
-        "volume_ratio": 0.97
-      },
-      "levels": {
-        "support": 629.28,
-        "resistance": 760.4,
-        "dist_to_support_pct": 16.88,
-        "dist_to_resistance_pct": 0.44
+        "dist_to_support_pct": 0.06,
+        "dist_to_resistance_pct": 15.77
       }
     },
     {
       "symbol": "AAPL",
-      "current_price": 311.23,
-      "price_change_30d_pct": 9.62,
-      "action": "\u26aa HOLD/NEUTRAL",
-      "score": -10,
+      "current_price": 311.73,
+      "price_change_30d_pct": 15.11,
+      "action": "HOLD/NEUTRAL",
+      "score": 15,
       "signals": [
-        "RSI near overbought (65.9)",
         "MACD bearish momentum increasing",
-        "Price above BB midline \u2014 bullish bias"
+        "Price above BB midline \u2014 bullish bias",
+        "GOLDEN CROSS zone \u2014 bullish structure"
       ],
       "indicators": {
-        "rsi": 65.9,
-        "macd": 9.2044,
-        "macd_signal": 9.6839,
-        "macd_histogram": -0.4795,
-        "bb_upper": 319.09,
-        "bb_lower": 287.38,
-        "bb_mid": 303.23,
-        "ema_50": 287.28,
-        "ema_200": 275.26,
-        "volume_ratio": 0.8
+        "rsi": 64.5,
+        "macd": 8.8998,
+        "macd_signal": 9.5748,
+        "macd_histogram": -0.675,
+        "bb_upper": 318.81,
+        "bb_lower": 290.11,
+        "bb_mid": 304.46,
+        "ema_50": 287.76,
+        "ema_200": 269.03,
+        "volume_ratio": 0.69
       },
       "levels": {
-        "support": 245.28,
+        "support": 289.73,
         "resistance": 316.94,
-        "dist_to_support_pct": 21.19,
-        "dist_to_resistance_pct": 1.83
+        "dist_to_support_pct": 7.59,
+        "dist_to_resistance_pct": 1.67
+      }
+    },
+    {
+      "symbol": "NVDA",
+      "current_price": 206.04,
+      "price_change_30d_pct": -0.96,
+      "action": "HOLD/NEUTRAL",
+      "score": 10,
+      "signals": [
+        "MACD bearish momentum increasing",
+        "Price below BB midline \u2014 bearish bias",
+        "GOLDEN CROSS zone \u2014 bullish structure"
+      ],
+      "indicators": {
+        "rsi": 34.8,
+        "macd": 2.4219,
+        "macd_signal": 4.3014,
+        "macd_histogram": -1.8795,
+        "bb_upper": 231.86,
+        "bb_lower": 205.98,
+        "bb_mid": 218.92,
+        "ema_50": 206.52,
+        "ema_200": 191.59,
+        "volume_ratio": 0.76
+      },
+      "levels": {
+        "support": 205.79,
+        "resistance": 236.26,
+        "dist_to_support_pct": 0.12,
+        "dist_to_resistance_pct": 14.67
       }
     },
     {
       "symbol": "QQQ",
-      "current_price": 740.61,
-      "price_change_30d_pct": 8.66,
-      "action": "\ud83d\udfe0 SELL",
-      "score": -25,
+      "current_price": 710.88,
+      "price_change_30d_pct": 7.08,
+      "action": "HOLD/NEUTRAL",
+      "score": 10,
       "signals": [
-        "RSI near overbought (64.9)",
-        "MACD BEARISH CROSSOVER",
-        "Price above BB midline \u2014 bullish bias"
+        "MACD bearish momentum increasing",
+        "Price below BB midline \u2014 bearish bias",
+        "GOLDEN CROSS zone \u2014 bullish structure"
       ],
       "indicators": {
-        "rsi": 64.9,
-        "macd": 21.0679,
-        "macd_signal": 21.5327,
-        "macd_histogram": -0.4647,
-        "bb_upper": 752.72,
-        "bb_lower": 690.29,
-        "bb_mid": 721.5,
-        "ema_50": 682.19,
-        "ema_200": 638.9,
-        "volume_ratio": 0.95
+        "rsi": 51.1,
+        "macd": 17.9115,
+        "macd_signal": 20.821,
+        "macd_histogram": -2.9095,
+        "bb_upper": 751.4,
+        "bb_lower": 693.2,
+        "bb_mid": 722.3,
+        "ema_50": 682.96,
+        "ema_200": 633.64,
+        "volume_ratio": 1.39
       },
       "levels": {
-        "support": 555.6,
+        "support": 695.25,
         "resistance": 748.65,
-        "dist_to_support_pct": 24.98,
-        "dist_to_resistance_pct": 1.09
+        "dist_to_support_pct": 2.25,
+        "dist_to_resistance_pct": 5.31
+      }
+    },
+    {
+      "symbol": "SPY",
+      "current_price": 740.9,
+      "price_change_30d_pct": 3.78,
+      "action": "HOLD/NEUTRAL",
+      "score": 10,
+      "signals": [
+        "MACD bearish momentum increasing",
+        "Price below BB midline \u2014 bearish bias",
+        "GOLDEN CROSS zone \u2014 bullish structure"
+      ],
+      "indicators": {
+        "rsi": 51.5,
+        "macd": 10.3142,
+        "macd_signal": 12.2135,
+        "macd_histogram": -1.8993,
+        "bb_upper": 762.73,
+        "bb_lower": 730.19,
+        "bb_mid": 746.46,
+        "ema_50": 722.81,
+        "ema_200": 693.48,
+        "volume_ratio": 0.97
+      },
+      "levels": {
+        "support": 731.53,
+        "resistance": 760.4,
+        "dist_to_support_pct": 1.28,
+        "dist_to_resistance_pct": 2.63
+      }
+    },
+    {
+      "symbol": "GLD",
+      "current_price": 397.02,
+      "price_change_30d_pct": -8.36,
+      "action": "HOLD/NEUTRAL",
+      "score": 10,
+      "signals": [
+        "MACD bearish momentum increasing",
+        "Price AT LOWER BB \u2014 potential bounce",
+        "Price below BB midline \u2014 bearish bias"
+      ],
+      "indicators": {
+        "rsi": 33.2,
+        "macd": -6.0889,
+        "macd_signal": -5.1076,
+        "macd_histogram": -0.9813,
+        "bb_upper": 437.03,
+        "bb_lower": 397.59,
+        "bb_mid": 417.31,
+        "ema_50": 425.27,
+        "ema_200": 447.82,
+        "volume_ratio": 1.42
+      },
+      "levels": {
+        "support": 396.6,
+        "resistance": 436.2,
+        "dist_to_support_pct": 0.11,
+        "dist_to_resistance_pct": 9.87
+      }
+    },
+    {
+      "symbol": "SLV",
+      "current_price": 61.64,
+      "price_change_30d_pct": -10.39,
+      "action": "HOLD/NEUTRAL",
+      "score": 0,
+      "signals": [
+        "MACD bearish momentum increasing",
+        "Price below BB midline \u2014 bearish bias"
+      ],
+      "indicators": {
+        "rsi": 32.3,
+        "macd": -1.2915,
+        "macd_signal": -0.5579,
+        "macd_histogram": -0.7335,
+        "bb_upper": 79.17,
+        "bb_lower": 60.96,
+        "bb_mid": 70.06,
+        "ema_50": 69.37,
+        "ema_200": 71.87,
+        "volume_ratio": 1.33
+      },
+      "levels": {
+        "support": 61.58,
+        "resistance": 80.86,
+        "dist_to_support_pct": 0.11,
+        "dist_to_resistance_pct": 31.18
+      }
+    },
+    {
+      "symbol": "MSFT",
+      "current_price": 418.36,
+      "price_change_30d_pct": -1.26,
+      "action": "HOLD/NEUTRAL",
+      "score": -10,
+      "signals": [
+        "MACD bearish momentum increasing",
+        "MACD BEARISH CROSSOVER",
+        "Price below BB midline \u2014 bearish bias",
+        "GOLDEN CROSS zone \u2014 bullish structure"
+      ],
+      "indicators": {
+        "rsi": 48.8,
+        "macd": 5.9263,
+        "macd_signal": 6.4399,
+        "macd_histogram": -0.5136,
+        "bb_upper": 450.62,
+        "bb_lower": 393.9,
+        "bb_mid": 422.26,
+        "ema_50": 415.02,
+        "ema_200": 408.66,
+        "volume_ratio": 0.51
+      },
+      "levels": {
+        "support": 400.01,
+        "resistance": 466.32,
+        "dist_to_support_pct": 4.59,
+        "dist_to_resistance_pct": 11.46
       }
     }
   ],
   "market_summary": {
-    "buy_count": 7,
-    "sell_count": 1,
-    "neutral_count": 6,
-    "avg_score": 11.4
+    "buy_count": 5,
+    "sell_count": 0,
+    "neutral_count": 7,
+    "avg_score": 15.0
   }
 }
