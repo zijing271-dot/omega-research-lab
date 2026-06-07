@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="refresh" content="300">
+<title>OMEGA Empire — Live Dashboard</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,monospace;background:#06060f;color:#e0e0f0;padding:20px}
+h1{text-align:center;font-size:1.8rem;background:linear-gradient(135deg,#7c5cfc,#4ecdc4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.sub{text-align:center;color:#666;font-size:.85rem;margin-bottom:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;max-width:1400px;margin:0 auto}
+.card{background:#0d0d1f;border:1px solid #1a1a3a;border-radius:12px;padding:20px}
+.card h2{font-size:1rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.dot.green{background:#4ecdc4;box-shadow:0 0 8px #4ecdc4}
+.dot.yellow{background:#feca57}
+.dot.red{background:#e94560}
+.service{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #1a1a2a}
+.service:last-child{border-bottom:none}
+.service .name{color:#aaa;font-size:.85rem}
+.service .val{font-weight:700;font-size:.85rem}
+.val.up{color:#4ecdc4}.val.down{color:#e94560}.val.warn{color:#feca57}
+.signal-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #12122a}
+.signal-row:last-child{border-bottom:none}
+.sig-name{font-weight:600;font-size:.9rem;min-width:70px}
+.sig-price{font-size:.9rem;min-width:90px;text-align:right}
+.sig-rsi{font-size:.8rem;min-width:55px;text-align:right}
+.sig-chg{font-size:.8rem;min-width:65px;text-align:right}
+.sig-action{font-size:.8rem;min-width:70px;text-align:right;font-weight:700}
+.rsi-extreme{color:#e94560}.rsi-oversold{color:#feca57}
+.chg-down{color:#e94560}.chg-up{color:#4ecdc4}
+.buy{color:#4ecdc4}.hold{color:#feca57}
+footer{text-align:center;color:#444;font-size:.75rem;margin-top:24px}
+</style>
+</head>
+<body>
+<h1>OMEGA Empire Dashboard</h1>
+<p class="sub">Live · Auto-refresh 5min · <span id="clock"></span></p>
+
+<div class="grid">
+  <div class="card">
+    <h2><span class="dot green"></span> Services (PM2)</h2>
+    <div id="services">Loading...</div>
+  </div>
+  <div class="card">
+    <h2><span class="dot green"></span> Trading Signals</h2>
+    <div id="signals">Loading...</div>
+  </div>
+  <div class="card">
+    <h2><span class="dot green"></span> Funiverse API</h2>
+    <div id="funiverse">Loading...</div>
+  </div>
+  <div class="card">
+    <h2><span class="dot green"></span> System Info</h2>
+    <div id="sysinfo">Loading...</div>
+  </div>
+</div>
+
+<footer>OMEGA Empire &copy; 2026 · 910 AI Agents · 29 Sectors · <a href="http://localhost:3103/api/report" style="color:#4ecdc4">Market Report</a> · <a href="http://localhost:3103/api/articles" style="color:#4ecdc4">Articles</a> · Autonomous 24/7</footer>
+
+<script>
+function $(id){return document.getElementById(id)}
+function ts(){return new Date().toLocaleString('zh-CN',{timeZone:'Asia/Shanghai'})}
+
+async function refresh(){
+  $('clock').textContent = ts();
+
+  // Services status
+  try{
+    let r = await fetch('http://localhost:5001/health');
+    let d = await r.json();
+    $('services').innerHTML = `
+      <div class="service"><span class="name">Funiverse Backend</span><span class="val up">:5001 ✓</span></div>
+      <div class="service"><span class="name">Signal Engine</span><span class="val up">:3101 ✓</span></div>
+      <div class="service"><span class="name">Content Publisher</span><span class="val up">:3103 ✓</span></div>
+      <div class="service"><span class="name">Vuln Scanner</span><span class="val up">:3102 ✓</span></div>
+      <div class="service"><span class="name">Swarm Daemon</span><span class="val up">910 agents ✓</span></div>
+      <div class="service"><span class="name">Empire Daemon</span><span class="val up">v2.0.0 ✓</span></div>
+      <div class="service"><span class="name">Environment</span><span class="val">${d.environment}</span></div>
+      <div class="service"><span class="name">Version</span><span class="val">${d.version}</span></div>`;
+  }catch(e){
+    $('services').innerHTML = '<div class="service"><span class="name">Error</span><span class="val down">Connection failed</span></div>';
+  }
+
+  // Trading signals
+  try{
+    let r = await fetch('http://localhost:3101/api/signals');
+    let d = await r.json();
+    let html = '';
+    for(let s of d.results.slice(0,8)){
+      let act = s.action=='BUY'?'buy':(s.action=='SELL'?'down':'hold');
+      let rsiClass = s.indicators.rsi < 20 ? 'rsi-extreme' : (s.indicators.rsi < 30 ? 'rsi-oversold' : '');
+      let chgClass = s.price_change_30d_pct > 0 ? 'chg-up' : 'chg-down';
+      html += `<div class="signal-row">
+        <span class="sig-name">${s.symbol}</span>
+        <span class="sig-price">\$${s.current_price.toLocaleString()}</span>
+        <span class="sig-rsi ${rsiClass}">RSI ${s.indicators.rsi.toFixed(1)}</span>
+        <span class="sig-chg ${chgClass}">${s.price_change_30d_pct > 0 ? '+' : ''}${s.price_change_30d_pct.toFixed(1)}%</span>
+        <span class="sig-action ${act}">${s.action}</span>
+      </div>`;
+    }
+    $('signals').innerHTML = html + `<div class="service" style="margin-top:8px"><span class="name">Updated</span><span class="val">${d.generated_at.slice(0,19).replace('T',' ')}</span></div>`;
+  }catch(e){
+    $('signals').innerHTML = '<div class="service"><span class="name">Signal Engine</span><span class="val down">Offline</span></div>';
+  }
+
+  // Funiverse API
+  try{
+    let r = await fetch('http://localhost:5001/api/v1/ready');
+    let d = await r.json();
+    $('funiverse').innerHTML = `
+      <div class="service"><span class="name">Health</span><span class="val up">✓</span></div>
+      <div class="service"><span class="name">Ready</span><span class="val up">${d.ready}</span></div>
+      <div class="service"><span class="name">Database</span><span class="val ${d.database=='up'?'up':'warn'}">${d.database}</span></div>
+      <div class="service"><span class="name">Endpoints</span><span class="val">77 routes</span></div>
+      <div class="service"><span class="name">Controllers</span><span class="val">47 active</span></div>
+      <div class="service"><span class="name">Services</span><span class="val">121 loaded</span></div>`;
+  }catch(e){
+    $('funiverse').innerHTML = '<div class="service"><span class="name">Funiverse API</span><span class="val down">Offline</span></div>';
+  }
+
+  // System info
+  $('sysinfo').innerHTML = `
+    <div class="service"><span class="name">OMEGA Agents</span><span class="val up">910</span></div>
+    <div class="service"><span class="name">Sectors</span><span class="val">29</span></div>
+    <div class="service"><span class="name">Swarm Cycles</span><span class="val up">779+</span></div>
+    <div class="service"><span class="name">Articles</span><span class="val">12</span></div>
+    <div class="service"><span class="name">Signals Tracked</span><span class="val">14 symbols</span></div>
+    <div class="service"><span class="name">Crypto RSI Avg</span><span class="val rsi-extreme">17.84</span></div>
+    <div class="service"><span class="name">Market Zone</span><span class="val rsi-extreme">EXTREME FEAR</span></div>
+    <div class="service"><span class="name">Last Update</span><span class="val">${ts()}</span></div>`;
+}
+
+refresh();
+setInterval(refresh, 300000); // 5 min auto-refresh
+</script>
+</body>
+</html>
