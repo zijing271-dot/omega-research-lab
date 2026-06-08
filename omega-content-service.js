@@ -7,11 +7,14 @@ const http = require('http');
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 const PORT = process.env.PORT || 3103;
 const BASE = __dirname;
 const ARTICLES_DIR = path.join(BASE, 'articles');
 const SIGNALS_FILE = path.join(BASE, 'signals-output', 'latest-signals.json');
+const GHPAGES_DIR = path.join(process.env.USERPROFILE || 'C:\\Users\\86159', 'zijing271-dot.github.io');
+const GHPAGES_REPORTS_DIR = path.join(GHPAGES_DIR, 'reports');
 
 let publishCount = 0;
 let lastPublishTime = null;
@@ -124,30 +127,80 @@ tr:hover{background:rgba(124,92,252,0.03)}
 </div></body></html>`;
 }
 
+function syncToGitHubPages(fname, content) {
+    try {
+        if (!fs.existsSync(GHPAGES_DIR)) return { synced: false, reason: 'GH Pages dir not found' };
+        if (!fs.existsSync(GHPAGES_REPORTS_DIR)) fs.mkdirSync(GHPAGES_REPORTS_DIR, { recursive: true });
+
+        // Write report to GH Pages reports/
+        const destPath = path.join(GHPAGES_REPORTS_DIR, 'latest.html');
+        fs.writeFileSync(destPath, content);
+        fs.writeFileSync(path.join(GHPAGES_REPORTS_DIR, fname), content);
+
+        // Update reports index
+        const reportFiles = fs.readdirSync(GHPAGES_REPORTS_DIR)
+            .filter(f => f.endsWith('.html'))
+            .sort().reverse();
+        const indexHtml = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>OMEGA Market Reports</title><style>body{font-family:system-ui;background:#06060f;color:#e0e0f0;max-width:800px;margin:0 auto;padding:40px 20px}h1{background:linear-gradient(135deg,#7c5cfc,#4ecdc4);-webkit-background-clip:text;-webkit-text-fill-color:transparent}a{color:#4ecdc4;text-decoration:none;display:block;padding:8px 0;border-bottom:1px solid #1a1a2a}a:hover{color:#7c5cfc}.ts{color:#666;font-size:.8rem}</style></head><body><h1>OMEGA Market Reports</h1><p style="color:#888">Auto-generated every 3 hours by OMEGA Content Engine. <a href="./latest.html">📊 Latest Report →</a></p><div style="margin-top:24px">${reportFiles.map(f => `<a href="./${f}">📄 ${f.replace('.html','')} <span class="ts">${f.includes('latest')?'(live)':''}</span></a>`).join('')}</div><p style="color:#555;margin-top:40px;font-size:.8em">OMEGA Empire · 910 AI Agents · <a href="../">Home</a></p></body></html>`;
+        fs.writeFileSync(path.join(GHPAGES_REPORTS_DIR, 'index.html'), indexHtml);
+
+        // Git commit + push
+        const cwd = process.cwd();
+        try {
+            process.chdir(GHPAGES_DIR);
+            execSync('git add reports/ && git commit -m "auto: OMEGA market report update" && git push', {
+                timeout: 30000,
+                stdio: 'pipe'
+            });
+            process.chdir(cwd);
+            return { synced: true, url: 'https://zijing271.github.io/reports/latest.html' };
+        } catch (gitErr) {
+            process.chdir(cwd);
+            return { synced: false, reason: 'Git push failed: ' + (gitErr.message || '').slice(0, 80) };
+        }
+    } catch (e) {
+        return { synced: false, reason: e.message };
+    }
+}
+
 async function runPublishCycle() {
     const signals = loadSignals();
     if (!signals) return { status: 'SKIPPED', reason: 'No signals data' };
     const date = new Date().toISOString().split('T')[0];
     const title = `Market-Update-${date}`;
     const content = generateReport(signals);
+    const fname = `${date}-market-update.html`;
+
+    // Generate trade analysis (19-agent consensus) in background
+    const tradeScript = path.join(BASE, 'ai-hedge-fund', 'trade_report.py');
+    try {
+        if (fs.existsSync(tradeScript)) {
+            execSync(`python3 "${tradeScript}"`, { timeout: 15000, stdio: 'pipe' });
+            console.log('[OMEGA-Content] Trade analysis generated');
+        }
+    } catch (e) {
+        console.log('[OMEGA-Content] Trade analysis skipped:', (e.message || '').slice(0, 80));
+    }
+    let result = { status: 'PUBLISHED_LOCAL', file: fname };
 
     if (telegraphAvailable) {
         try {
-            const result = await publishArticle(title, content);
-            publishCount++; lastPublishTime = new Date().toISOString();
-            return { status: 'PUBLISHED', url: result.url, title };
+            const pub = await publishArticle(title, content);
+            result = { status: 'PUBLISHED', url: pub.url, title };
         } catch (e) {
-            const fname = `${date}-market-update.html`;
             fs.writeFileSync(path.join(ARTICLES_DIR, fname), content);
-            publishCount++; lastPublishTime = new Date().toISOString();
-            return { status: 'PUBLISHED_LOCAL', file: fname };
+            result = { status: 'PUBLISHED_LOCAL', file: fname, telegraph_error: e.message };
         }
     } else {
-        const fname = `${date}-market-update.html`;
         fs.writeFileSync(path.join(ARTICLES_DIR, fname), content);
-        publishCount++; lastPublishTime = new Date().toISOString();
-        return { status: 'PUBLISHED_LOCAL', file: fname };
     }
+
+    // Always sync to GitHub Pages for public access
+    const ghSync = syncToGitHubPages(fname, content);
+    result.ghpages = ghSync;
+
+    publishCount++; lastPublishTime = new Date().toISOString();
+    return result;
 }
 
 const server = http.createServer((req, res) => {
